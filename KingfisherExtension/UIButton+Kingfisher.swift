@@ -8,9 +8,9 @@
 
 import Kingfisher
 
-extension UIButton {
+public extension UIButton {
 
-    public func kfe_setBackgroundImageWithURLString(_ URLString: String?,
+    func kfe_setBackgroundImageWithURLString(_ URLString: String?,
                                    forState state: UIControlState,
                                             placeholderImage: UIImage? = nil,
                                             optionsInfo: KingfisherOptionsInfo? = nil,
@@ -21,7 +21,7 @@ extension UIButton {
 
     }
 
-    public func kfe_setImageWithURLString(_ URLString: String?,
+    func kfe_setImageWithURLString(_ URLString: String?,
                                    forState state: UIControlState,
                                             placeholderImage: UIImage? = nil,
                                             optionsInfo: KingfisherOptionsInfo? = nil,
@@ -74,9 +74,9 @@ extension UIButton {
 
 }
 
-extension UIButton {
+public extension UIButton {
 
-    public func kfe_setImage(byTransformer transformer: ImageResizable, forState state: UIControlState = UIControlState(), toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
+     func kfe_setImage(byTransformer transformer: ImageResizable, forState state: UIControlState = UIControlState(), toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
 
         kfe_setImage(byTransformer: transformer, action: { [weak self] image in
 
@@ -85,7 +85,7 @@ extension UIButton {
         }, toDisk: toDisk, completionHandler: completionHandler)
     }
 
-    public func kfe_setBackgroundImage(byTransformer transformer: ImageResizable, forState state: UIControlState = UIControlState(), toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
+     func kfe_setBackgroundImage(byTransformer transformer: ImageResizable, forState state: UIControlState = UIControlState(), toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
 
         kfe_setImage(byTransformer: transformer, action: { [weak self] image in
 
