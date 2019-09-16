@@ -17,7 +17,7 @@ private let screenScale = UIScreen.main.scale
 
 public extension UIImage {
 
-    public func navi_avatarImageWithStyle(_ avatarStyle: ImageStyle) -> UIImage {
+    func navi_avatarImageWithStyle(_ avatarStyle: ImageStyle) -> UIImage {
 
         var avatarImage: UIImage?
 
@@ -41,7 +41,7 @@ public extension UIImage {
 
 public extension UIImage {
 
-    public func navi_resizeToSize(_ size: CGSize, withTransform transform: CGAffineTransform, drawTransposed: Bool, interpolationQuality: CGInterpolationQuality) -> UIImage? {
+     func navi_resizeToSize(_ size: CGSize, withTransform transform: CGAffineTransform, drawTransposed: Bool, interpolationQuality: CGInterpolationQuality) -> UIImage? {
 
         let pixelSize = CGSize(width: size.width * screenScale, height: size.height * screenScale)
 
@@ -64,7 +64,7 @@ public extension UIImage {
         return nil
     }
 
-    public func navi_transformForOrientationWithSize(_ size: CGSize) -> CGAffineTransform {
+    func navi_transformForOrientationWithSize(_ size: CGSize) -> CGAffineTransform {
 
         var transform = CGAffineTransform.identity
 
@@ -103,7 +103,7 @@ public extension UIImage {
         return transform
     }
 
-    public func navi_resizeToSize(_ size: CGSize, withInterpolationQuality interpolationQuality: CGInterpolationQuality) -> UIImage? {
+  func navi_resizeToSize(_ size: CGSize, withInterpolationQuality interpolationQuality: CGInterpolationQuality) -> UIImage? {
 
         let drawTransposed: Bool
 
@@ -118,7 +118,7 @@ public extension UIImage {
         return image
     }
 
-    public func navi_cropWithBounds(_ bounds: CGRect) -> UIImage? {
+     func navi_cropWithBounds(_ bounds: CGRect) -> UIImage? {
 
         if let newCGImage = cgImage?.cropping(to: bounds) {
             let image = UIImage(cgImage: newCGImage, scale: screenScale, orientation: imageOrientation)
@@ -128,7 +128,7 @@ public extension UIImage {
         return nil
     }
 
-    public func navi_centerCropWithSize(_ size: CGSize) -> UIImage? {
+     func navi_centerCropWithSize(_ size: CGSize) -> UIImage? {
 
         let pixelSize = CGSize(width: size.width * screenScale, height: size.height * screenScale)
 
@@ -189,7 +189,7 @@ public extension UIImage {
         }
     }
 
-    public func navi_roundWithCornerRadius(_ cornerRadius: CGFloat, borderWidth: CGFloat) -> UIImage? {
+    func navi_roundWithCornerRadius(_ cornerRadius: CGFloat, borderWidth: CGFloat) -> UIImage? {
 
         let image = navi_imageWithAlpha()
 
@@ -227,7 +227,7 @@ public extension UIImage {
 
 public extension UIImage {
 
-    public func navi_hasAlpha() -> Bool {
+     func navi_hasAlpha() -> Bool {
 
         guard let alpha = cgImage?.alphaInfo else { return false }
 
@@ -241,7 +241,7 @@ public extension UIImage {
         }
     }
 
-    public func navi_imageWithAlpha() -> UIImage {
+   func navi_imageWithAlpha() -> UIImage {
 
         if navi_hasAlpha() {
             return self
