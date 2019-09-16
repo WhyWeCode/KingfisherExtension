@@ -8,9 +8,9 @@
 
 import Kingfisher
 
-extension UIImageView {
+public extension UIImageView {
 
-    public func kfe_setImageWithURLString(_ URLString: String?,
+     func kfe_setImageWithURLString(_ URLString: String?,
                                    placeholderImage: UIImage? = nil,
                                    optionsInfo: KingfisherOptionsInfo? = nil,
                                    progressBlock: DownloadProgressBlock? = nil,
@@ -46,7 +46,7 @@ extension UIImageView {
         return nil
     }
 
-    public func kfe_setImage(byTransformer transformer: ImageResizable, toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
+     func kfe_setImage(byTransformer transformer: ImageResizable, toDisk: Bool = true, completionHandler: ((_ image: UIImage?) -> Void)? = nil) {
 
         kfe_setImage(byTransformer: transformer, action: { [weak self] image in
 
